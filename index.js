@@ -4,7 +4,7 @@ document.getElementById('repo-form').addEventListener('submit', async (event) =>
   const apiUrl = `https://api.github.com/repos/${repoUrl}/contents`;
   const response = await fetch(apiUrl);
   const fileTree = await response.json();
-  displayFileTree(fileTree);
+  await displayFileTree(fileTree);
 });
 
 async function displayFileTree(fileTree, parentElement = null, indentLevel = 0) {
